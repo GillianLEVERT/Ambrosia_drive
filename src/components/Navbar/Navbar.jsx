@@ -12,6 +12,12 @@ export const Navbar = () => {
             <li>
               <Link to="/user"> UserPage </Link>
             </li>
+            <li>
+              <Link to="Cart"> Panier </Link>
+            </li>
+            <li>
+              <Link to="/LoginForm">Se Connecter</Link>
+            </li>
           </ul>
         </div>
       </nav>
