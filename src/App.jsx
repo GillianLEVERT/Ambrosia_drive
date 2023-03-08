@@ -6,6 +6,7 @@ import { User } from "./pages/User/User";
 import { Footer } from "./components/Footer/Footer";
 import { Navbar } from "./components/Navbar/Navbar";
 import { LoginForm } from "./components/LoginForm/LoginForm";
+import { Cart } from "./components/Cart/Cart";
 
 export const App = () => {
   return (
@@ -17,6 +18,7 @@ export const App = () => {
           <Route path="/*" element={<NotFound />} />
           <Route path="/User" element={<User />} />
           <Route path="/LoginForm" element={<LoginForm />} />
+          <Route path="/Cart" element={<Cart />} />
         </Routes>
       </main>
       <Footer />

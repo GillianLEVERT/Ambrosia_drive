@@ -13,6 +13,9 @@ export const Navbar = () => {
               <Link to="/user"> UserPage </Link>
             </li>
             <li>
+              <Link to="Cart"> Panier </Link>
+            </li>
+            <li>
               <Link to="/LoginForm">Se Connecter</Link>
             </li>
           </ul>
