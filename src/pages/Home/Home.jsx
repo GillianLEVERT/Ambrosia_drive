@@ -1,3 +1,8 @@
+import React from 'react'
+import { SearchBar } from '../../components/SearchBar/SearchBar'
+
 export const Home = () => {
-  return <h1>Home Page</h1>;
-};
+  return (
+    <SearchBar />
+  )
+}
