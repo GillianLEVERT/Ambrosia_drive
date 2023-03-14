@@ -1,6 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home/Home";
+import { Shopping } from "./pages/Shopping/Shopping";
 import { NotFound } from "./pages/NotFound/NotFound";
 import { User } from "./pages/User/User";
 import { Footer } from "./components/Footer/Footer";
@@ -19,6 +20,9 @@ export const App = () => {
           <Route path="/User" element={<User />} />
           <Route path="/LoginForm" element={<LoginForm />} />
           <Route path="/Cart" element={<Cart />} />
+          <Route path="/Shopping" element={<Shopping />} />
+          
+
         </Routes>
       </main>
       <Footer />

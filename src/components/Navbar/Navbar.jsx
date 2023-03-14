@@ -13,6 +13,9 @@ export const Navbar = () => {
               <Link to="/user"> UserPage </Link>
             </li>
             <li>
+              <Link to="/Shopping">Chercher des produits</Link>
+            </li>
+            <li>
               <Link to="Cart"> Panier </Link>
             </li>
             <li>
