@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Cart = (props) => {
+export const CartItemList = (props) => {
   const { items } = props;
 
   const totalPrice = items?.reduce((total, item) => total + item.price * item.quantity, 0);
