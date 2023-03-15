@@ -1,4 +1,5 @@
 import React from "react";
+import { AddToCartButton } from "./addToCartButton/addToCartButton";
 import "./CardProduct.css";
 
 export const CardProduct = ({ product }) => {
@@ -14,6 +15,7 @@ export const CardProduct = ({ product }) => {
           </p>
           <p>{product.store_shelf}</p>
         </div>
+        <AddToCartButton />
       </div>
     </div>
   );
