@@ -21,6 +21,9 @@ export const Navbar = () => {
             <li>
               <Link to="/LoginForm">Se Connecter</Link>
             </li>
+            <li>
+              <Link to="/Booking">Menu Reservation</Link>
+            </li>
           </ul>
         </div>
       </nav>

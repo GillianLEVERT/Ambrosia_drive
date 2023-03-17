@@ -9,6 +9,7 @@ import { Navbar } from "./components/Navbar/Navbar";
 import { LoginForm } from "./components/LoginForm/LoginForm";
 import { Cart } from "./pages/Cart/Cart";
 import { NewSession } from "./pages/NewSession/NewSession";
+import { Booking } from "./components/Booking/Booking";
 
 export const App = () => {
   return (
@@ -23,6 +24,7 @@ export const App = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="api/sessions/create" element={<NewSession />} />
           <Route path="/shopping" element={<Shopping />} />
+          <Route path="/Booking" element={<Booking />} />
         </Routes>
       </main>
       <Footer />
