@@ -1,10 +1,36 @@
-import React from 'react'
-import { CartItemList } from '../../components/CartItemList/CartItemList'
+import React, {useEffect, useState} from 'react'
+import { CartItem } from '../../components/CartItem/CartItem'
+import Cookies from 'js-cookie'
 
 export const Cart = () => {
+
+  const [cartItems, setCartItems] = useState([])
+  const [totalPrice, setTotalPrice] = useState(0)
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/carts`, {
+      method: "GET",
+
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": Cookies.get('token')
+      },
+    })
+    .then((response) =>response.json())
+    .then((data) => {
+      console.log(data)
+      setCartItems(data.cart_items)
+      setTotalPrice(data.total_price)
+    })
+    .catch((error) => console.log(error))
+  }, [])
+  
   return (
     <>
-      <CartItemList />
+      {cartItems.map((item) => (
+        <CartItem cartItem={item.product} key={item.id}/>
+      ))}
+      <p>{totalPrice}</p>
     </>
   )
 }
