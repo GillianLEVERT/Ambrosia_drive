@@ -15,7 +15,7 @@ export const CardProduct = ({ product }) => {
           </p>
           <p>{product.store_shelf.name}</p>
         </div>
-        <AddToCartButton />
+        <AddToCartButton product={product} />
       </div>
     </div>
   );

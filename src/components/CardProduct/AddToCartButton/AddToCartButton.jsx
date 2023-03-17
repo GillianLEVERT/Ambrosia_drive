@@ -5,7 +5,7 @@ export const AddToCartButton = ({product}) => {
   const [counter, setCounter] = useState(0);
 
   const addToCart = () => {
-    fetch("http://localhost:3000/cart_items", {
+    fetch(`http://localhost:3000/cart_items`, {
       method: "POST",
 
       headers: {
@@ -15,7 +15,6 @@ export const AddToCartButton = ({product}) => {
 
       body: JSON.stringify({
         "cart_item": {
-          "cart_id": 1,
           "product_id": product.id
         }
       }),
@@ -40,7 +39,6 @@ export const AddToCartButton = ({product}) => {
 
       body: JSON.stringify({
         "cart_item": {
-          "cart_id": 1,
           "product_id": product.id
         }
       }),
@@ -55,17 +53,19 @@ export const AddToCartButton = ({product}) => {
   };
 
   const substractCounter = () => {
-    fetch("http://localhost:3000/cart_items/:id", {
+    fetch("http://localhost:3000/cart_items/1", {
       method: "DELETE",
 
       headers: {
-        "Content-Type": "application/json",
         "Authorization": Cookies.get('token')
       },
+      body: JSON.stringify({
+        "cart_item": {
+          "product_id": product.id
+        }
+      }),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data)
+      .then(() => {
         setCounter(counter - 1);
       }
     )
