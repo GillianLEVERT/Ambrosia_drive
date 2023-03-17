@@ -11,10 +11,7 @@
   "dependencies": {
     "jotai": "^2.0.3",
     "js-cookie": "^3.0.1",
-    "moment": "^2.29.4",
-    "moment-timezone": "^0.5.41",
     "react": "^18.2.0",
-    "react-datetime": "^3.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.9.0"
   },
@@ -22,6 +19,9 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react-swc": "^3.2.0",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7",
     "vite": "^4.2.0"
   }
 }

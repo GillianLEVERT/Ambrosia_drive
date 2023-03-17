@@ -4,8 +4,8 @@ export const Navbar = () => {
   return (
     <div>
       <nav>
-        <div>
-          <ul>
+        <div >
+          <ul className="flex flex-row justify-center space-x-5">
             <li>
               <Link to="/"> Home </Link>
             </li>
