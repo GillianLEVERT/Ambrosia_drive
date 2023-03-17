@@ -5,7 +5,7 @@ export const Navbar = () => {
     <div>
       <nav>
         <div>
-          <ul>
+        <ul className="flex flex-row justify-center space-x-5">
             <li>
               <Link to="/"> Home </Link>
             </li>
