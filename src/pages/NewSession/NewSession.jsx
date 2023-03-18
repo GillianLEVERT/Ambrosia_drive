@@ -9,7 +9,7 @@ export const NewSession = () => {
   const loginToken = urlParams.get('login_token');
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/sessions/create?login_token=${loginToken}`, {
+    fetch(`${import.meta.env.VITE_API_URL}api/sessions/create?login_token=${loginToken}`, {
       method: "POST",
     })
       .then((response) => response.json())

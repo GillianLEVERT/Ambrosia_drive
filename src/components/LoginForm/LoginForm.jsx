@@ -11,7 +11,7 @@ export const LoginForm = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:3000/api/authentication/create",
+        `${import.meta.env.VITE_API_URL}api/authentication/create`,
         {
           method: "POST",
           headers: {

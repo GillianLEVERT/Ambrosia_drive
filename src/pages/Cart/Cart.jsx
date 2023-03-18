@@ -8,7 +8,7 @@ export const Cart = () => {
   const [totalPrice, setTotalPrice] = useState(0)
 
   useEffect(() => {
-    fetch(`http://localhost:3000/carts`, {
+    fetch(`${import.meta.env.VITE_API_URL}carts`, {
       method: "GET",
 
       headers: {
