@@ -5,7 +5,7 @@ export const AddToCartButton = ({product}) => {
   const [counter, setCounter] = useState(0);
 
   const addToCart = () => {
-    fetch(`http://localhost:3000/cart_items`, {
+    fetch(`${import.meta.env.VITE_API_URL}cart_items`, {
       method: "POST",
 
       headers: {
@@ -29,7 +29,7 @@ export const AddToCartButton = ({product}) => {
   };
 
   const incrementCounter = () => {
-    fetch("http://localhost:3000/cart_items", {
+    fetch(`${import.meta.env.VITE_API_URL}cart_items`, {
       method: "POST",
 
       headers: {
@@ -53,7 +53,7 @@ export const AddToCartButton = ({product}) => {
   };
 
   const substractCounter = () => {
-    fetch("http://localhost:3000/cart_items/1", {
+    fetch(`${import.meta.env.VITE_API_URL}cart_items/1`, {
       method: "DELETE",
 
       headers: {
