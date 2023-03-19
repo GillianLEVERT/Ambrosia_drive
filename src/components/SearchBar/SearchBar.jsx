@@ -21,7 +21,7 @@ export const SearchBar = () => {
   };
 
   return (
-    <form action="" onSubmit={handleSubmit} className="my-10">
+    <form action="" onSubmit={handleSubmit} className="mb-10">
       <div className="relative">
         <input
           id="form-search"
