@@ -75,13 +75,13 @@ export const AddToCartButton = ({product}) => {
   return (
     <>
       {counter < 1 ? (
-        <button onClick={addToCart}> Ajouter au panier</button>
+        <button onClick={addToCart} className="px-4 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-700 rounded-full sm:mx-2 hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Ajouter</button>
       ) : (
-        <>
+        <div className="flex gap-4 px-4 py-2 text-sm font-bold tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-700 rounded-full sm:mx-2 hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
           <button onClick={substractCounter}>-</button>
           <p>{counter}</p>
           <button onClick={incrementCounter}>+</button>
-        </>
+        </div>
       )}
     </>
   );

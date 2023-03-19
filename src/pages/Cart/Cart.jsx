@@ -26,11 +26,11 @@ export const Cart = () => {
   }, [])
   
   return (
-    <>
+    <div className='flex flex-col gap-4'>
       {cartItems.map((item) => (
         <CartItem cartItem={item.product} key={item.id}/>
       ))}
       <p>{totalPrice}</p>
-    </>
+    </div>
   )
 }
