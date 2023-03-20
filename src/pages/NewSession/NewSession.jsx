@@ -17,6 +17,10 @@ export const NewSession = () => {
         method: "POST",
       }
     )
+    console.log(loginToken)
+    fetch(`https://ambrosiaserver.fly.dev/api/sessions/create?login_token=${loginToken}`, {
+      method: "POST",
+    })
       .then((response) => response.json())
       .then((response) => {
         console.log(response);
@@ -29,7 +33,7 @@ export const NewSession = () => {
 
   useEffect(() => {
     if (token) {
-      Cookies.set("token", token);
+      Cookies.set("token", token, { expires: 7 });
       navigate("/");
     }
   }, [token]);
