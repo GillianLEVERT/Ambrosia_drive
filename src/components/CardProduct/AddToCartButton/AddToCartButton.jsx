@@ -57,6 +57,7 @@ export const AddToCartButton = ({product}) => {
       method: "DELETE",
 
       headers: {
+        "Content-Type": "application/json",
         "Authorization": Cookies.get('token')
       },
       body: JSON.stringify({
