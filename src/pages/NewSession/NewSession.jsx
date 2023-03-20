@@ -11,6 +11,7 @@ export const NewSession = () => {
   const [token, setToken] = useState(null);
 
   useEffect(() => {
+    console.log(loginToken)
     fetch(`https://ambrosiaserver.fly.dev/api/sessions/create?login_token=${loginToken}`, {
       method: "POST",
     })
