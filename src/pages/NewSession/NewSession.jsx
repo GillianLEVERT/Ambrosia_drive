@@ -1,20 +1,22 @@
-import React, {useEffect, useState} from 'react'
-import Cookies from 'js-cookie'
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 export const NewSession = () => {
   const navigate = useNavigate();
 
   const urlParams = new URLSearchParams(window.location.search);
-  const loginToken = urlParams.get('login_token');
+  const loginToken = urlParams.get("login_token");
 
   const [token, setToken] = useState(null);
 
   useEffect(() => {
-    console.log(loginToken)
-    fetch(`https://ambrosiaserver.fly.dev/api/sessions/create?login_token=${loginToken}`, {
-      method: "POST",
-    })
+    fetch(
+      `https://ambrosiaserver.fly.dev/api/sessions/create?login_token=${loginToken}`,
+      {
+        method: "POST",
+      }
+    )
       .then((response) => response.json())
       .then((response) => {
         console.log(response);
@@ -23,18 +25,14 @@ export const NewSession = () => {
       .catch((error) => {
         console.error("Error:", error);
       });
-  }, [])
+  }, []);
 
   useEffect(() => {
     if (token) {
       Cookies.set("token", token, { expires: 7 });
       navigate("/");
     }
-  }, [token])
-  
-  return (
-    <>
-     
-    </>
-  )
-}
+  }, [token]);
+
+  return <></>;
+};
