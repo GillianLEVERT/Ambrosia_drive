@@ -17,10 +17,6 @@ export const NewSession = () => {
         method: "POST",
       }
     )
-    console.log(loginToken)
-    fetch(`https://ambrosiaserver.fly.dev/api/sessions/create?login_token=${loginToken}`, {
-      method: "POST",
-    })
       .then((response) => response.json())
       .then((response) => {
         console.log(response);
