@@ -10,13 +10,13 @@ export const Shopping = () => {
     <>
       <SearchBar />
       <div className="grid grid-cols-5 gap-6">
-      {searchResult === null ? (
-        <p>veuillez faire une recherche</p>
-      ) : (
-        searchResult.map((product) => (
-          <CardProduct product={product} key={product.id} />
-        ))
-      )}
+        {searchResult === null ? (
+          <p>veuillez faire une recherche</p>
+        ) : (
+          searchResult.map((product) => (
+            <CardProduct product={product} key={product.id} />
+          ))
+        )}
       </div>
     </>
   );

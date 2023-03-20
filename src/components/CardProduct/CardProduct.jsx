@@ -1,8 +1,8 @@
 import React from "react";
-import { AddToCartButton } from "./AddToCartButton/AddToCartButton";
+import { AddToCartButton } from "../AddToCartButton/AddToCartButton";
 
 export const CardProduct = ({ product }) => {
-  console.log(product);
+ 
   return (
     <div>
       <img
