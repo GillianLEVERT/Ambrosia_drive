@@ -11,7 +11,7 @@ export const LoginForm = () => {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}api/authentication/create`,
+        `https://ambrosiaserver.fly.dev/api/authentication/create`,
         {
           method: "POST",
           headers: {
