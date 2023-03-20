@@ -8,7 +8,7 @@ export const Cart = () => {
   const [totalPrice, setTotalPrice] = useState(0)
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}carts`, {
+    fetch(`https://ambrosiaserver.fly.dev/carts`, {
       method: "GET",
 
       headers: {

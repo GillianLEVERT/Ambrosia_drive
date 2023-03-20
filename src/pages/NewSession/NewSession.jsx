@@ -11,7 +11,7 @@ export const NewSession = () => {
   const [token, setToken] = useState(null);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}api/sessions/create?login_token=${loginToken}`, {
+    fetch(`https://ambrosiaserver.fly.dev/api/sessions/create?login_token=${loginToken}`, {
       method: "POST",
     })
       .then((response) => response.json())

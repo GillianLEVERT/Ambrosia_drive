@@ -5,7 +5,7 @@ export const AddToCartButton = ({product}) => {
   const [counter, setCounter] = useState(0);
 
   const addToCart = () => {
-    fetch(`${import.meta.env.VITE_API_URL}cart_items`, {
+    fetch(`https://ambrosiaserver.fly.dev/cart_items`, {
       method: "POST",
 
       headers: {
@@ -29,7 +29,7 @@ export const AddToCartButton = ({product}) => {
   };
 
   const incrementCounter = () => {
-    fetch(`${import.meta.env.VITE_API_URL}cart_items`, {
+    fetch(`https://ambrosiaserver.fly.dev/cart_items`, {
       method: "POST",
 
       headers: {
@@ -53,7 +53,7 @@ export const AddToCartButton = ({product}) => {
   };
 
   const substractCounter = () => {
-    fetch(`${import.meta.env.VITE_API_URL}cart_items/1`, {
+    fetch(`https://ambrosiaserver.fly.dev/cart_items/1`, {
       method: "DELETE",
 
       headers: {

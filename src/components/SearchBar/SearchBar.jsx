@@ -11,7 +11,7 @@ export const SearchBar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`${import.meta.env.VITE_API_URL}products?name=${searchData}`)
+    fetch(`https://ambrosiaserver.fly.dev/products?name=${searchData}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
