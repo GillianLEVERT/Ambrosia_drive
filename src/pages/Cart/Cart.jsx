@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { CartItem } from "../../components/CartItem/CartItem";
 import Cookies from "js-cookie";
+import { useSetAtom } from "jotai";
+import { cartItemsAtom } from "../../store/atom";
 
 export const Cart = () => {
+  const setCartItemsAtom = useSetAtom(cartItemsAtom);
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -17,7 +20,7 @@ export const Cart = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        setCartItemsAtom(data.cart_items);
         setCartItems(data.cart_items);
         setTotalPrice(data.total_price);
       })
