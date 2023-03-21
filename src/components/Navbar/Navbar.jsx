@@ -4,7 +4,7 @@ import { useAtom } from "jotai";
 
 export const Navbar = () => {
   const [isAuthenticated] = useAtom(isAuthenticatedAtom);
-  console.log(isAuthenticated);
+  
   return (
     <nav className="sticky top-0 bg-white border-b border-slate-200">
       <div className="px-6 sm:px-8 lg:px-16">
@@ -14,7 +14,7 @@ export const Navbar = () => {
           </div>
 
           <div className="flex items-center space-x-5">
-            <Link to="/shopping">Produits</Link>
+            <Link to="/shopping">Nos produits</Link>
             {isAuthenticated && (
               <>
                 <Link to="/cart">Panier</Link>
