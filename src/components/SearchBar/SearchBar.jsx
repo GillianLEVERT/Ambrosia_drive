@@ -1,17 +1,29 @@
-import React, { useState } from "react";
-import { useSetAtom } from "jotai";
+import React, { useState, useEffect } from "react";
+import { useAtom } from "jotai";
 import { searchResultAtom } from "../../store/atom";
 
 export const SearchBar = () => {
-  const [searchData, setSearchData] = useState("");
-  const setSearchResult = useSetAtom(searchResultAtom);
+  const [search, setSearch] = useState("");
+  const [searchResult, setSearchResult] = useAtom(searchResultAtom);
   const handleChange = (e) => {
-    setSearchData(e.target.value);
+    setSearch(e.target.value);
   };
+
+  useEffect(() => {
+    if (!searchResult) {
+      fetch(`https://ambrosiaserver.fly.dev/products?name=${search}`)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          setSearchResult(data);
+        })
+        .catch((error) => console.log(error));
+    }
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`https://ambrosiaserver.fly.dev/products?name=${searchData}`)
+    fetch(`https://ambrosiaserver.fly.dev/products?name=${search}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -29,7 +41,7 @@ export const SearchBar = () => {
           name="research"
           className="rounded-full w-full px-9 py-3 bg-slate-100"
           placeholder="Patates, vin, chocolat ..."
-          value={searchData}
+          value={search}
           onChange={handleChange}
         />
         <button type="submit" className="absolute inset-0 right-auto group">
