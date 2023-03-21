@@ -1,11 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { SearchBar } from "../../components/SearchBar/SearchBar";
-import { useAtomValue } from "jotai";
+import { useAtomValue, useSetAtom } from "jotai";
 import { searchResultAtom } from "../../store/atom";
+import { cartItemsAtom } from "../../store/atom";
 import { CardProduct } from "../../components/CardProduct/CardProduct";
+import Cookies from "js-cookie";
 
 export const Shopping = () => {
   const searchResult = useAtomValue(searchResultAtom);
+  const setCartItemAtom = useSetAtom(cartItemsAtom);
+
+  useEffect(() => {
+    fetch("https://ambrosiaserver.fly.dev/cart_items", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: Cookies.get("token"),
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setCartItemAtom(data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
     <>
       <SearchBar />
