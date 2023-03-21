@@ -4,7 +4,7 @@ import { useAtomValue, useSetAtom } from "jotai";
 import { searchResultAtom } from "../../store/atom";
 import { cartItemsAtom } from "../../store/atom";
 import { CardProduct } from "../../components/CardProduct/CardProduct";
-import Cookies from "js-cookie";
+
 
 export const Shopping = () => {
   const searchResult = useAtomValue(searchResultAtom);
@@ -15,7 +15,6 @@ export const Shopping = () => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: Cookies.get("token"),
       },
     })
       .then((response) => response.json())
@@ -31,7 +30,7 @@ export const Shopping = () => {
       <SearchBar />
       <div className="grid grid-cols-5 gap-6">
         {searchResult === null ? (
-          <p>veuillez faire une recherche</p>
+          <p>Veuillez faire une recherche</p>
         ) : (
           searchResult.map((product) => (
             <CardProduct product={product} key={product.id} />

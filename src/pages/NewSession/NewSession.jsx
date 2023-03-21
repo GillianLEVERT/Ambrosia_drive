@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import { useAtom } from "jotai";
+import { isAuthenticatedAtom } from "../../store/atom";
 
 export const NewSession = () => {
   const navigate = useNavigate();
-
+  const [,setIsAuthenticated] = useAtom(isAuthenticatedAtom);
   const urlParams = new URLSearchParams(window.location.search);
   const loginToken = urlParams.get("login_token");
-
   const [token, setToken] = useState(null);
 
   useEffect(() => {
@@ -27,10 +28,15 @@ export const NewSession = () => {
       });
   }, []);
 
+  const handleAuthentication = (token) => {
+    Cookies.set("token", token, { expires: 7 });
+    setIsAuthenticated(true);
+    navigate("/");
+  };
+
   useEffect(() => {
     if (token) {
-      Cookies.set("token", token, { expires: 7 });
-      navigate("/");
+      handleAuthentication(token);
     }
   }, [token]);
 
