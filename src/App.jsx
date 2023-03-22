@@ -9,6 +9,7 @@ import { Navbar } from "./components/Navbar/Navbar";
 import { Cart } from "./pages/Cart/Cart";
 import { NewSession } from "./pages/NewSession/NewSession";
 import { Connexion } from "./pages/Connexion/Connexion";
+import {CheckoutForm} from "./components/Checkout/CheckoutForm";
 
 export const App = () => {
   return (
@@ -24,6 +25,7 @@ export const App = () => {
           <Route path="api/sessions/create" element={<NewSession />} />
           <Route path="/shopping" element={<Shopping />} />
         </Routes>
+        <CheckoutForm />
       </main>
       <Footer />
     </Router>
