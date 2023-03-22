@@ -18,10 +18,9 @@ export const CartItem = (cartItem) => {
       <div className="flex items-center gap-4">
         <p>{item.price} €</p>
         <div>
-        <AddToCartButton product={item} />
+          <AddToCartButton product={item} />
+        </div>
       </div>
-      </div>
-    
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 
 export const CheckoutForm = () => {
   const handleClick = () => {
-    fetch(`http://localhost:3000/paiement/create`, {
+    fetch(`https://ambrosiaserver.fly.dev/paiement/create`, {
       method: "POST",
     })
       .then((response) => response.json())
