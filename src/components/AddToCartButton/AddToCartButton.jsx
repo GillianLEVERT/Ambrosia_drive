@@ -11,8 +11,8 @@ export const AddToCartButton = ({ product }) => {
   const isAuthenticated = useAtomValue(isAuthenticatedAtom);
 
   useEffect(() => {
-    cartItems &&
-      cartItems.find &&
+    const cartItem =
+      cartItems &&
       cartItems.find((cartItem) => cartItem.product_id === product.id);
     if (cartItem) {
       setCounter(cartItem.quantity);
@@ -38,12 +38,14 @@ export const AddToCartButton = ({ product }) => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        setCounter(data.quantity);
+        setCartItem(data)
+        setCounter(1);
       })
       .catch((error) => console.log(error));
   };
 
   const incrementCounter = () => {
+    const newQuantity = counter + 1;
     fetch(`https://ambrosiaserver.fly.dev/cart_items/${cartItem.id}`, {
       method: "PATCH",
 
@@ -54,14 +56,14 @@ export const AddToCartButton = ({ product }) => {
 
       body: JSON.stringify({
         cart_item: {
-          quantity: cartItem.quantity + 1,
+          quantity: newQuantity,
         },
       }),
     })
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        setCounter(data.quantity);
+        setCounter(counter + 1);
       })
       .catch((error) => console.log(error));
   };
@@ -99,7 +101,7 @@ export const AddToCartButton = ({ product }) => {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
-          setCounter(data.quantity);
+          setCounter(counter - 1);
         })
         .catch((error) => console.log(error));
     }
