@@ -2,7 +2,6 @@ import React from "react";
 import { AddToCartButton } from "../AddToCartButton/AddToCartButton";
 
 export const CardProduct = ({ product }) => {
- 
   return (
     <div>
       <img
