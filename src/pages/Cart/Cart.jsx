@@ -3,6 +3,7 @@ import { CartItem } from "../../components/CartItem/CartItem";
 import Cookies from "js-cookie";
 import { useSetAtom } from "jotai";
 import { cartItemsAtom } from "../../store/atom";
+import { CheckoutForm } from "../../components/Checkout/CheckoutForm";
 
 export const Cart = () => {
   const setCartItemsAtom = useSetAtom(cartItemsAtom);
@@ -33,6 +34,7 @@ export const Cart = () => {
         <CartItem cartItem={item.product} key={item.id} />
       ))}
       <p>{totalPrice}</p>
+    <CheckoutForm />
     </div>
   );
 };
