@@ -57,7 +57,7 @@ export const LoginForm = () => {
         <button
           type="submit"
           disabled={isLoading}
-          className="px-4 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-700 rounded-md sm:mx-2 hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+          className="px-4 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#CD5555] rounded-md sm:mx-2 hover:bg-[#b94d4d] focus:outline-none focus:bg-[#b94d4d]"
         >
           {isLoading ? "Connexion en cours..." : "Se connecter"}
         </button>
