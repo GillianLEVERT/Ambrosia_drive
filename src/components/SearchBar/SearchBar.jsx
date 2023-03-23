@@ -11,25 +11,23 @@ export const SearchBar = () => {
 
   useEffect(() => {
     if (!searchResult) {
-      fetch(`https://ambrosiaserver.fly.dev/products?name=${search}`)
+      fetch(`https://ambrosia-drive-git-development-gillianlevert.vercel.app/products?name=${search}`)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
           setSearchResult(data);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => console.error(error));
     }
   }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`https://ambrosiaserver.fly.dev/products?name=${search}`)
+    fetch(`https://ambrosia-drive-git-development-gillianlevert.vercel.app/products?name=${search}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setSearchResult(data);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.error(error));
   };
 
   return (

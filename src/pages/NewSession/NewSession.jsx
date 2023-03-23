@@ -13,19 +13,16 @@ export const NewSession = () => {
 
   useEffect(() => {
     fetch(
-      `https://ambrosiaserver.fly.dev/api/sessions/create?login_token=${loginToken}`,
+      `https://ambrosia-drive-git-development-gillianlevert.vercel.app/api/sessions/create?login_token=${loginToken}`,
       {
         method: "POST",
       }
     )
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
         setToken(response.auth_token);
       })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+      .catch((error) => console.error(error));
   }, []);
 
   const handleAuthentication = (token) => {

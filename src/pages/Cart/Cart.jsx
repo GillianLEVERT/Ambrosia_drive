@@ -11,7 +11,7 @@ export const Cart = () => {
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
-    fetch(`https://ambrosiaserver.fly.dev/carts`, {
+    fetch(`https://ambrosia-drive-git-development-gillianlevert.vercel.app/carts`, {
       method: "GET",
 
       headers: {
@@ -25,7 +25,7 @@ export const Cart = () => {
         setCartItems(data.cart_items);
         setTotalPrice(data.total_price);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.error(error));
   }, []);
 
   return (

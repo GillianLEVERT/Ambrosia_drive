@@ -11,7 +11,7 @@ export const LoginForm = () => {
 
     try {
       const response = await fetch(
-        `https://ambrosiaserver.fly.dev/api/authentication/create`,
+        `https://ambrosia-drive-git-development-gillianlevert.vercel.app/api/authentication/create`,
         {
           method: "POST",
           headers: {
@@ -29,7 +29,7 @@ export const LoginForm = () => {
         setErrorMessage(error);
       }
     } catch (error) {
-      console.error(error);
+      console.error(error)(error);
       setErrorMessage(
         "Une erreur s'est produite, veuillez réessayer plus tard."
       );
