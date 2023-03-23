@@ -29,12 +29,17 @@ export const Cart = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="h-screen flex flex-col gap-4">
       {cartItems.map((item) => (
         <CartItem cartItem={item.product} key={item.id} />
       ))}
-      <p>{totalPrice}</p>
-    <CheckoutForm />
+      <p className="font-bold text-right text-[#CD5555] mr-2">
+        Total du panier : {totalPrice}
+      </p>
+      <div className="flex justify-end">
+      <button class="text-[#CD5555] hover:bg-[#CD5555] hover:text-white font-montserrat py-2 px-8 font-medium rounded-xl transition-all duration-300"> <CheckoutForm /></button>
+      </div>
+      
     </div>
   );
 };
