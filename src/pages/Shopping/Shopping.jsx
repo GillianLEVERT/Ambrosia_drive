@@ -4,25 +4,30 @@ import { useAtomValue, useSetAtom } from "jotai";
 import { searchResultAtom } from "../../store/atom";
 import { cartItemsAtom } from "../../store/atom";
 import { CardProduct } from "../../components/CardProduct/CardProduct";
-
+import { isAuthenticatedAtom } from "../../store/atom";
+import Cookies from "js-cookie";
 
 export const Shopping = () => {
   const searchResult = useAtomValue(searchResultAtom);
   const setCartItemAtom = useSetAtom(cartItemsAtom);
+  const loged = useAtomValue(isAuthenticatedAtom);
 
   useEffect(() => {
-    fetch("https://ambrosiaserver.fly.dev/cart_items", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setCartItemAtom(data);
+    if (loged) {
+      fetch("https://ambrosiaserver.fly.dev/cart_items", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: Cookies.get("token"),
+        },
       })
-      .catch((error) => console.log(error));
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          setCartItemAtom(data);
+        })
+        .catch((error) => console.log(error));
+    }
   }, []);
 
   return (
