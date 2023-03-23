@@ -14,7 +14,12 @@ module.exports = {
 
     'lg': '1439px',
     // => @media (min-width: 1440px) { ... }
-    extend: {},
+    extend: {
+      BackgroundImage:{
+
+        home: "url('../..assets/images/background.jpg')",
+      }
+    },
   },
   plugins: [],
 }

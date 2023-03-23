@@ -3,6 +3,7 @@ import { LoginForm } from "../../components/LoginForm/LoginForm";
 
 export const Connexion = () => {
   return (
+    <section className="px-6 sm:px-8 lg:px-16 py-4 sm:py-6 lg:py-8">
     <div className="relative md:flex">
       {/* Content */}
       <div className="md:w-1/2">
@@ -38,5 +39,6 @@ export const Connexion = () => {
         />
       </div>
     </div>
+    </section>
   );
 };
