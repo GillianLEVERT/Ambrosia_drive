@@ -14,7 +14,7 @@ export const Navbar = () => {
   }, [setIsAuthenticated]);
 
   return (
-    <nav className="bg-[#FCF4E9] sm:text-xs lg:text-lg sticky top-0 border-b border-slate-200">
+    <nav className="bg-[#FCF4E9] sm:text-xs lg:text-lg sticky top-0 z-50 border-b border-slate-200 ">
       <div className="px-6 sm:px-8 lg:px-16">
         <div className="flex items-center justify-between h-16 -mb-px">
           <div className="flex items-center space-x-3 text-[#CD5555] font-bold">
