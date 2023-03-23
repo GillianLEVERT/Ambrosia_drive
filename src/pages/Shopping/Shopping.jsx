@@ -34,7 +34,7 @@ export const Shopping = () => {
     <>
     <section className="px-6 sm:px-8 lg:px-16 py-4 sm:py-6 lg:py-8">
       <SearchBar />
-      <div className="grid grid-cols-5 gap-6">
+      <div className="grid grid-cols md:grid-cols-2 lg:grid-cols-5 gap-2 md:gap-6">
         {searchResult === null ? (
           <p>Veuillez faire une recherche</p>
         ) : (
