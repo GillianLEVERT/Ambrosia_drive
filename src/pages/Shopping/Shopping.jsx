@@ -32,6 +32,7 @@ export const Shopping = () => {
 
   return (
     <>
+    <section className="px-6 sm:px-8 lg:px-16 py-4 sm:py-6 lg:py-8">
       <SearchBar />
       <div className="grid grid-cols-5 gap-6">
         {searchResult === null ? (
@@ -42,6 +43,7 @@ export const Shopping = () => {
           ))
         )}
       </div>
+      </section>
     </>
   );
 };

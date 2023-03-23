@@ -15,7 +15,7 @@ export const App = () => {
   return (
     <Router>
       <Navbar />
-      <main className="h-full px-6 sm:px-8 lg:px-16 py-4 sm:py-6 lg:py-8">
+      <main className="h-full">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/*" element={<NotFound />} />
