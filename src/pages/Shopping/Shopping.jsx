@@ -14,7 +14,7 @@ export const Shopping = () => {
 
   useEffect(() => {
     if (loged) {
-      fetch("https://ambrosia-drive-git-development-gillianlevert.vercel.app/cart_items", {
+      fetch("https://ambrosiaserver.fly.dev/cart_items", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

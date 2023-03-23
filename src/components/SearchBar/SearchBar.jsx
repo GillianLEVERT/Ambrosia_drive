@@ -11,7 +11,7 @@ export const SearchBar = () => {
 
   useEffect(() => {
     if (!searchResult) {
-      fetch(`https://ambrosia-drive-git-development-gillianlevert.vercel.app/products?name=${search}`)
+      fetch(`https://ambrosiaserver.fly.dev/products?name=${search}`)
         .then((response) => response.json())
         .then((data) => {
           setSearchResult(data);
@@ -22,7 +22,7 @@ export const SearchBar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`https://ambrosia-drive-git-development-gillianlevert.vercel.app/products?name=${search}`)
+    fetch(`https://ambrosiaserver.fly.dev/products?name=${search}`)
       .then((response) => response.json())
       .then((data) => {
         setSearchResult(data);

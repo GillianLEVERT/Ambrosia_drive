@@ -11,7 +11,7 @@ export const LoginForm = () => {
 
     try {
       const response = await fetch(
-        `https://ambrosia-drive-git-development-gillianlevert.vercel.app/api/authentication/create`,
+        `https://ambrosiaserver.fly.dev/api/authentication/create`,
         {
           method: "POST",
           headers: {

@@ -21,7 +21,7 @@ export const AddToCartButton = ({ product }) => {
   }, [cartItems]);
 
   const addToCart = () => {
-    fetch(`https://ambrosia-drive-git-development-gillianlevert.vercel.app/cart_items`, {
+    fetch(`https://ambrosiaserver.fly.dev/cart_items`, {
       method: "POST",
 
       headers: {
@@ -45,7 +45,7 @@ export const AddToCartButton = ({ product }) => {
 
   const incrementCounter = () => {
     const newQuantity = counter + 1;
-    fetch(`https://ambrosia-drive-git-development-gillianlevert.vercel.app/cart_items/${cartItem.id}`, {
+    fetch(`https://ambrosiaserver.fly.dev/cart_items/${cartItem.id}`, {
       method: "PATCH",
 
       headers: {
@@ -69,7 +69,7 @@ export const AddToCartButton = ({ product }) => {
   const substractCounter = () => {
     const newQuantity = counter - 1;
     if (newQuantity === 0) {
-      fetch(`https://ambrosia-drive-git-development-gillianlevert.vercel.app/cart_items/${cartItem.id}`, {
+      fetch(`https://ambrosiaserver.fly.dev/cart_items/${cartItem.id}`, {
         method: "DELETE",
 
         headers: {
@@ -82,7 +82,7 @@ export const AddToCartButton = ({ product }) => {
         })
         .catch((error) => console.error(error));
     } else {
-      fetch(`https://ambrosia-drive-git-development-gillianlevert.vercel.app/cart_items/${cartItem.id}`, {
+      fetch(`https://ambrosiaserver.fly.dev/cart_items/${cartItem.id}`, {
         method: "PATCH",
 
         headers: {

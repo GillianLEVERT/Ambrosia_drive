@@ -13,7 +13,7 @@ export const NewSession = () => {
 
   useEffect(() => {
     fetch(
-      `https://ambrosia-drive-git-development-gillianlevert.vercel.app/api/sessions/create?login_token=${loginToken}`,
+      `https://ambrosiaserver.fly.dev/api/sessions/create?login_token=${loginToken}`,
       {
         method: "POST",
       }

@@ -2,7 +2,7 @@ import React from "react";
 import Cookies from "js-cookie"
 export const CheckoutForm = () => {
   const handleClick = () => {
-    fetch(`https://ambrosia-drive-git-development-gillianlevert.vercel.app/paiement/create`, {
+    fetch(`https://ambrosiaserver.fly.dev/paiement/create`, {
       method: "POST",
       headers: {
         Authorization: Cookies.get("token")
