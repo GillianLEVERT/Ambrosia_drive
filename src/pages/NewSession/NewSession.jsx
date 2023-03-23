@@ -20,12 +20,9 @@ export const NewSession = () => {
     )
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
         setToken(response.auth_token);
       })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+      .catch((error) => console.error(error));
   }, []);
 
   const handleAuthentication = (token) => {

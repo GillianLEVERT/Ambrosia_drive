@@ -13,7 +13,7 @@ export const CheckoutForm = () => {
         
         window.location.href = `${data.session_url}`;
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.error(error));
   };
   return <button onClick={handleClick}>PAYER</button>;
 };

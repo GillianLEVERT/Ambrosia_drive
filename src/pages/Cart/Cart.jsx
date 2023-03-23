@@ -25,7 +25,7 @@ export const Cart = () => {
         setCartItems(data.cart_items);
         setTotalPrice(data.total_price);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.error(error));
   }, []);
 
   return (
