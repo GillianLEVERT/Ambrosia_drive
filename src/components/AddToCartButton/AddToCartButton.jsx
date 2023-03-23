@@ -11,17 +11,17 @@ export const AddToCartButton = ({ product }) => {
   const isAuthenticated = useAtomValue(isAuthenticatedAtom);
 
   useEffect(() => {
-    const cartItem =
+    const item = 
       cartItems &&
-      cartItems.find((cartItem) => cartItem.product_id === product.id);
-    if (cartItem) {
-      setCounter(cartItem.quantity);
-      setCartItem(cartItem);
+      cartItems.find((c) => c.product_id === product.id)
+    if (item) {
+      setCounter(item.quantity);
+      setCartItem(item)
     }
-  }, []);
+  }, [cartItems]);
 
   const addToCart = () => {
-    fetch(`https://ambrosiaserver.fly.dev/cart_items`, {
+    fetch(`https://ambrosia-drive-git-development-gillianlevert.vercel.app/cart_items`, {
       method: "POST",
 
       headers: {
@@ -37,16 +37,15 @@ export const AddToCartButton = ({ product }) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setCartItem(data)
         setCounter(1);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.error(error));
   };
 
   const incrementCounter = () => {
     const newQuantity = counter + 1;
-    fetch(`https://ambrosiaserver.fly.dev/cart_items/${cartItem.id}`, {
+    fetch(`https://ambrosia-drive-git-development-gillianlevert.vercel.app/cart_items/${cartItem.id}`, {
       method: "PATCH",
 
       headers: {
@@ -62,16 +61,15 @@ export const AddToCartButton = ({ product }) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setCounter(counter + 1);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.error(error));
   };
 
   const substractCounter = () => {
     const newQuantity = counter - 1;
     if (newQuantity === 0) {
-      fetch(`https://ambrosiaserver.fly.dev/cart_items/${cartItem.id}`, {
+      fetch(`https://ambrosia-drive-git-development-gillianlevert.vercel.app/cart_items/${cartItem.id}`, {
         method: "DELETE",
 
         headers: {
@@ -82,9 +80,9 @@ export const AddToCartButton = ({ product }) => {
         .then(() => {
           setCounter(0);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => console.error(error));
     } else {
-      fetch(`https://ambrosiaserver.fly.dev/cart_items/${cartItem.id}`, {
+      fetch(`https://ambrosia-drive-git-development-gillianlevert.vercel.app/cart_items/${cartItem.id}`, {
         method: "PATCH",
 
         headers: {
@@ -100,10 +98,9 @@ export const AddToCartButton = ({ product }) => {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
           setCounter(counter - 1);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => console.error(error));
     }
   };
 

@@ -14,7 +14,7 @@ export const Shopping = () => {
 
   useEffect(() => {
     if (loged) {
-      fetch("https://ambrosiaserver.fly.dev/cart_items", {
+      fetch("https://ambrosia-drive-git-development-gillianlevert.vercel.app/cart_items", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -23,12 +23,11 @@ export const Shopping = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
           setCartItemAtom(data);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => console.error(error));
     }
-  }, []);
+  }, [loged]);
 
   return (
     <>
