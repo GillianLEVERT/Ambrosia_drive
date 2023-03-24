@@ -7,7 +7,7 @@ Un drive local permettant de réserver des produits locaux chez des revendeurs l
 
 Vin, légumes, fruits, viandes et autres.
 
-Link : https://ambrosia-drive-bdi0b0r6i-gillianlevert.vercel.app/
+Link : https://ambrosia-drive.vercel.app/
 
 
 ## Authors
@@ -26,3 +26,5 @@ Link : https://ambrosia-drive-bdi0b0r6i-gillianlevert.vercel.app/
 
 **Bundler:** Vitejs
 
+## Lien vers github back-end
+-https://github.com/GillianLEVERT/Ambrosia_Drive_Server

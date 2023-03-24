@@ -3,22 +3,40 @@ import Cookies from "js-cookie";
 import { useAtomValue } from "jotai";
 import { cartItemsAtom } from "../../store/atom";
 import { isAuthenticatedAtom } from "../../store/atom";
+import { useSetAtom } from "jotai";
+import { totalPriceAtom } from "../../store/atom";
 
 export const AddToCartButton = ({ product }) => {
   const [counter, setCounter] = useState(0);
   const cartItems = useAtomValue(cartItemsAtom);
   const [cartItem, setCartItem] = useState(null);
   const isAuthenticated = useAtomValue(isAuthenticatedAtom);
+  const setTotalPrice = useSetAtom(totalPriceAtom);
 
   useEffect(() => {
-    const item = 
-      cartItems &&
-      cartItems.find((c) => c.product_id === product.id)
+    const item =
+      cartItems && cartItems.find((c) => c.product_id === product.id);
     if (item) {
       setCounter(item.quantity);
-      setCartItem(item)
+      setCartItem(item);
     }
   }, [cartItems]);
+
+  useEffect(() => {
+    fetch(`https://ambrosiaserver.fly.dev/carts`, {
+      method: "GET",
+
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: Cookies.get("token"),
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setTotalPrice(data.total_price);
+      })
+      .catch((error) => console.error(error));
+  }, [counter]);
 
   const addToCart = () => {
     fetch(`https://ambrosiaserver.fly.dev/cart_items`, {
@@ -37,7 +55,7 @@ export const AddToCartButton = ({ product }) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        setCartItem(data)
+        setCartItem(data);
         setCounter(1);
       })
       .catch((error) => console.error(error));
@@ -61,6 +79,7 @@ export const AddToCartButton = ({ product }) => {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         setCounter(counter + 1);
       })
       .catch((error) => console.error(error));

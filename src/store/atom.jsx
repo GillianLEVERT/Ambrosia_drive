@@ -8,3 +8,4 @@ export const cartItemsAtom = atom(null);
 export const isAuthenticatedAtom = atom(false);
 
 export const sessionIdAtom = atomWithStorage('sessionId', null);
+export const totalPriceAtom = atom(0)

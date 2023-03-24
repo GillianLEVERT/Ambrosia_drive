@@ -9,8 +9,7 @@ export const CartItem = (cartItem) => {
       <div className="flex items-center">
         <img
           src={item.img_url}
-          alt=""
-          srcset=""
+          alt="faker"
           className="aspect-square rounded-2xl h-16 mr-4"
         />
         <p className="font-bold">{item.name}</p>
