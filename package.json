@@ -9,10 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "canvas-confetti": "^1.6.0",
     "jotai": "^2.0.3",
     "js-cookie": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-emoji-render": "^2.0.1",
     "react-router-dom": "^6.9.0"
   },
   "devDependencies": {
