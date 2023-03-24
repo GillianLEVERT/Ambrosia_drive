@@ -23,12 +23,11 @@ export const Shopping = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
           setCartItemAtom(data);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => console.error(error));
     }
-  }, []);
+  }, [loged]);
 
   return (
     <>

@@ -29,7 +29,7 @@ export const LoginForm = () => {
         setErrorMessage(error);
       }
     } catch (error) {
-      console.error(error);
+      console.error(error)(error);
       setErrorMessage(
         "Une erreur s'est produite, veuillez réessayer plus tard."
       );

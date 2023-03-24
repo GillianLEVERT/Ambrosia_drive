@@ -14,10 +14,9 @@ export const SearchBar = () => {
       fetch(`https://ambrosiaserver.fly.dev/products?name=${search}`)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
           setSearchResult(data);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => console.error(error));
     }
   }, []);
 
@@ -26,10 +25,9 @@ export const SearchBar = () => {
     fetch(`https://ambrosiaserver.fly.dev/products?name=${search}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setSearchResult(data);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.error(error));
   };
 
   return (
