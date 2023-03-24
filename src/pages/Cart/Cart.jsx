@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { CartItem } from "../../components/CartItem/CartItem";
 import Cookies from "js-cookie";
-import { useSetAtom } from "jotai";
+import { useSetAtom, useAtom } from "jotai";
 import { cartItemsAtom } from "../../store/atom";
 import { CheckoutForm } from "../../components/Checkout/CheckoutForm";
+import { totalPriceAtom } from "../../store/atom";
 
 export const Cart = () => {
   const setCartItemsAtom = useSetAtom(cartItemsAtom);
   const [cartItems, setCartItems] = useState([]);
-  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalPrice, setTotalPrice] = useAtom(totalPriceAtom);
 
   useEffect(() => {
     fetch(`https://ambrosiaserver.fly.dev/carts`, {
@@ -38,10 +39,10 @@ export const Cart = () => {
           Total du panier : {totalPrice}
         </p>
         <div className="flex justify-end">
-          <button class="text-[#CD5555] hover:bg-[#CD5555] hover:text-white font-montserrat py-2 px-8 font-medium rounded-xl transition-all duration-300">
+          <div className="text-[#CD5555] hover:bg-[#CD5555] hover:text-white font-montserrat py-2 px-8 font-medium rounded-xl transition-all duration-300">
             {" "}
             <CheckoutForm />
-          </button>
+          </div>
         </div>
       </div>
     </section>
