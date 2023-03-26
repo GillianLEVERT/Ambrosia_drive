@@ -3,6 +3,7 @@ import React from "react";
 export const Home = () => {
   return (
     <section className="h-screen bg-[url('./assets/images/background.jpg')] bg-no-repeat bg-cover">
+     <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40 z-[0]"></div>
       <div className="flex flex-row justify-center items-center lg:p-8 mb-10">
         <div className="bg-[#D8D0C2] h-64 lg:h-48 border rounded-xl overflow-hidden mt-8 w-48 lg:w-64 p-2 lg:p-6 relative ">
           <div className="object-cover text-center bg-[#CD5555] border-black border-2 rounded-full w-8 h-8 overflow-hidden mx-auto font-bold text-lg mb-2 ">1</div>
@@ -13,7 +14,7 @@ export const Home = () => {
             </span>
           </p>
         </div>
-        <div className="bg-[#DAD0C2] h-64 lg:h-48 border rounded-xl overflow-hidden mt-8 w-48 lg:w-64 p-2 lg:p-6  mx-4 sm:mx-10 lg:mx-20">
+        <div className="bg-[#DAD0C2] h-64 lg:h-48 border rounded-xl overflow-hidden mt-8 w-48 lg:w-64 p-2 lg:p-6  mx-4 sm:mx-10 lg:mx-20 z-[1]">
         <div className="object-cover text-center bg-[#CD5555] border-black border-2 rounded-full w-8 h-8 overflow-hidden mx-auto font-bold text-lg mb-2 ">2</div>
           <p className="text-justify lg:text-xl">
             Je choisis{" "}
@@ -21,7 +22,7 @@ export const Home = () => {
             de retrait de mon panier.
           </p>
         </div>
-        <div className="bg-[#D8D0C2] h-64 lg:h-48 border rounded-xl overflow-hidden  mt-8 w-48 lg:w-64 p-2 lg:p-6 ">
+        <div className="bg-[#D8D0C2] h-64 lg:h-48 border rounded-xl overflow-hidden  mt-8 w-48 lg:w-64 p-2 lg:p-6 z-[1]">
         <div className="object-cover text-center bg-[#CD5555] border-black border-2 rounded-full w-8 h-8 overflow-hidden mx-auto font-bold text-lg mb-2 ">3</div>
           <p className="text-justify lg:text-xl ">
             Je récupère ma commande{" "}
@@ -31,6 +32,8 @@ export const Home = () => {
           </p>
         </div>
       </div>
+      <div className="z-[1]"><button className="text-[#CD5555] font-bold"> Voir les produits </button></div>
+
     </section>
   );
 };

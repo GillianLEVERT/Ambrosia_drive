@@ -12,5 +12,5 @@ export const Logout = () => {
     setIsAuthenticated(false);
   };
 
-  return <button onClick={handleLogout}>Se déconnecter</button>;
+  return <button onClick={handleLogout} className="hover: text-[#4e2020] transition duration-300 ease-in-out">Se déconnecter</button>;
 };
