@@ -13,7 +13,7 @@ export const Checkout = () => {
 
   useEffect(() => {
     if (sessionId) {
-      fetch(`https://ambrosiaserver.fly.dev/paiement/success`, {
+      fetch(`https://ambrosiaserver.fly.dev//paiement/success`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",

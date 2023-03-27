@@ -6,14 +6,14 @@ import { isAuthenticatedAtom } from "../../store/atom";
 
 export const NewSession = () => {
   const navigate = useNavigate();
-  const [,setIsAuthenticated] = useAtom(isAuthenticatedAtom);
+  const [, setIsAuthenticated] = useAtom(isAuthenticatedAtom);
   const urlParams = new URLSearchParams(window.location.search);
   const loginToken = urlParams.get("login_token");
   const [token, setToken] = useState(null);
 
   useEffect(() => {
     fetch(
-      `https://ambrosiaserver.fly.dev/api/sessions/create?login_token=${loginToken}`,
+      `https://ambrosiaserver.fly.dev//api/sessions/create?login_token=${loginToken}`,
       {
         method: "POST",
       }
