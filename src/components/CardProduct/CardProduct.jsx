@@ -3,7 +3,7 @@ import { AddToCartButton } from "../AddToCartButton/AddToCartButton";
 
 export const CardProduct = ({ product }) => {
   return (
-    <div>
+    <div className="bg-white rounded-lg shadow-md p-4">
       <img
         src={product.img_url}
         alt=""
