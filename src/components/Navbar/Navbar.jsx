@@ -6,6 +6,7 @@ import { Logout } from "../Logout/Logout";
 import Cookie from "js-cookie";
 import { FaShoppingBasket } from "react-icons/fa";
 import { GiFruitBowl } from "react-icons/gi";
+import redLogo from "../../assets/images/logorouge.svg"
 
 export const Navbar = () => {
   const [isAuthenticated, setIsAuthenticated] = useAtom(isAuthenticatedAtom);
@@ -22,7 +23,7 @@ export const Navbar = () => {
           <div className="flex items-center space-x-3 text-[#CD5555] font-bold">
             <Link to="/">
               <img
-                src="src/assets/images/logorouge.svg"
+                src={redLogo}
                 alt="Logo Ambrosia Drive"
                 className="w-100 h-12"
               />
