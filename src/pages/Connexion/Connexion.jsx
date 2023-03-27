@@ -29,7 +29,7 @@ export const Connexion = () => {
       >
        <div className="relative max-h-screen"> 
         <img
-  className="object-cover object-center w-full h-full h-screen"
+  className="object-cover object-center w-full h-screen"
   src="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
   width="760"
   height="1024"

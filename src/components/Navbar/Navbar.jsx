@@ -27,10 +27,10 @@ export const Navbar = () => {
           </div>
 
           <div className="flex items-center sm:space-x-5">
-            <Link to="/shopping" className="flex items-center sm:px-1 px-4 py-2 text-sm font-medium tracking-wide text-[#CD5555] m-1 hover:text-[#4e2020] transition ease-in-out"> <GiFruitBowl className="mr-2" style={{ fontSize: "1.5rem" }} />Nos produits</Link>
+            <Link to="/shopping" className="flex items-center sm:px-1 px-4 py-2 text-sm font-medium tracking-wide text-[#CD5555] m-1 hover:text-[#a43e3e] transition ease-in-out"> <GiFruitBowl className="mr-2 hover:rotate-45 hover:duration-300 hover:ease-in-out" style={{ fontSize: "1.5rem" }} />Nos produits</Link>
             {isAuthenticated && (
               <>
-                <Link to="/cart" className="flex items-center sm:px-1 px-4 py-2 text-sm font-medium tracking-wide text-[#CD5555] hover:text-[#4e2020] transition  ease-in-out m-1"><FaShoppingBasket className="mr-2" style={{ fontSize: "1.5rem" }}/> Mon Panier</Link>
+                <Link to="/cart" className="flex items-center sm:px-1 px-4 py-2 text-sm font-medium tracking-wide text-[#CD5555] hover:text-[#4e2020] transition  ease-in-out m-1"><FaShoppingBasket className="mr-2 hover:rotate-45 hover:duration-300 hover:ease-in-out" style={{ fontSize: "1.5rem" }}/> Mon Panier</Link>
                 <Link
                   to="/"
                   className="sm:px-1 px-4 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors transform bg-[#CD5555] rounded-full sm:mx-2 hover:bg-[#CD5555] focus:outline-none focus:bg-[#CD5555]"
