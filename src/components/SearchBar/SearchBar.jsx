@@ -37,14 +37,14 @@ export const SearchBar = () => {
           id="form-search"
           type="text"
           name="research"
-          className="rounded-full w-full px-9 py-3 bg-[#FCF4E9]"
+          className="rounded-full w-full px-9 py-3 bg-[#ffffff]"
           placeholder="Patates, vin, chocolat ..."
           value={search}
           onChange={handleChange}
         />
         <button type="submit" className="absolute inset-0 right-auto group">
           <svg
-            className="w-4 h-4 shrink-0 fill-current text-[#CD5555] group-hover:text-[#CD5555] ml-3 mr-2"
+            className="w-4 h-4 shrink-0 fill-current text-[#0b0b0b] group-hover:text-[#CD5555] ml-3 mr-2"
             viewBox="0 0 16 16"
             xmlns="http://www.w3.org/2000/svg"
           >

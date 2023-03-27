@@ -5,7 +5,7 @@ import { LoginForm } from "../../components/LoginForm/LoginForm";
 export const Connexion = () => {
   return (
     <section>
-    <div className="relative md:flex">
+    <div className="relative md:flex bg-[#FCF4E9]">
 
       <div className="md:w-1/2">
         <div className="min-h-screen h-full flex flex-col after:flex-1">
